@@ -1,10 +1,10 @@
 <h1>User Info</h1>
-image
+<%= attachment_image_tag user, :profile_image, :fill, 50, 50, fallback:'no_image.jpg' %>
 <p>Name</p>
 <%= user.name %>
 <p>Introduction</p>
-<%= user.introduction %>
-<%= link_to edit_user_path(user) %>
+<%= user.introduction %></br>
+<i class="fas fa-user-cog"><%= link_to "Edit User", edit_user_path(user) %></i>
 
 <h1>New Book</h1>
 <%= form_with model: book, local: true do |f| %>

@@ -8,7 +8,8 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     @book.save
-    redirect_to root_path
+    @user = @book.user
+    redirect_to user_path(@user.id)
   end
 
   def index

@@ -1,7 +1,9 @@
 <%= render 'books/book', book: @book, user: @user %>
 
 <h1>Books</h1>
-<p>Title</p>
-<%= @book.title %>
-<p>Opinion</p>
-<%= @book.body %>
+<% @books.each do |book| %>
+  <p>Title</p>
+  <%= book.title %>
+  <p>Opinion</p>
+  <%= book.body %>
+<% end %>
